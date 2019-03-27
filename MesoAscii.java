@@ -15,10 +15,11 @@ public class MesoAscii extends MesoAsciiAbstract
 	}
 	
 	@Override
-	int calAverage() {
-		// TODO Auto-generated method stub
-		return 0;
+	public int calAverage()
+	{
+		double sum= vals[0]+vals[1]+vals[2]+vals[3];
+		
+		return (int) (sum/4);
 	}
-	
 	
 }
