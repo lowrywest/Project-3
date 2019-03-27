@@ -9,9 +9,9 @@ public class MesoAscii extends MesoAsciiAbstract
 	/*
 	 * Creating the 
 	 */
-	public MesoAscii(String Stid)
+	public MesoAscii(MesoStation Stid)
 	{
-		vals=Stid.toCharArray();
+		vals=Stid.getStID().toCharArray();
 	}
 	
 	@Override
