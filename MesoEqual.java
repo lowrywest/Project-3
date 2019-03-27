@@ -69,15 +69,23 @@ public class MesoEqual
 		equalAsciiVals= new HashMap<String, Integer>();
 	}
 	
+	public MesoAscii convert(String string)
+	{
+		MesoStation placeHold =new MesoStation(StiD);
+		MesoAscii calAvgStid= new MesoAscii(placeHold);
+		return calAvgStid;
+		
+	}
 	
 
 	public HashMap<String, Integer> calAsciiEqual() 
 	{
-		for(String StiD: AsciiVal.keySet())
+		int comarisonAvg= convert(StiD).calAverage();
+		for(int i=0; i<keyValues.size(); i++)
 		{
 			
+			
 		}
-		
 		
 		return null;
 	}
