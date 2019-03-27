@@ -7,18 +7,6 @@ public class MesoAscii extends MesoAsciiAbstract
 	 */
 	private char[] vals;
 	
-	/*
-	 * Creating the 
-	 */
-	public MesoAscii(String Stid)
-	{
-		vals=Stid.toCharArray();
-	}
 	
-	@Override
-	int calAverage() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 	
 }
