@@ -4,15 +4,19 @@ import java.util.TreeMap;
 
 public class StationLexicographical extends MesoSortedAbstract
 {
-	private TreeMap<String, Integer> sorted= new TreeMap<String, Integer>();
+	private TreeMap<String, Integer> sorted;
+	private HashMap<String, Integer> input;
 	
 	public StationLexicographical(HashMap<String, Integer> AsciiVals)
 	{
-		
+		sorted= new TreeMap<String, Integer>();
+		input=AsciiVals;
 	}
+	
 	@Override
-	Map<String, Integer> sortedMap(HashMap<String, Integer> unsorted) 
+	public Map<String, Integer> sortedMap(HashMap<String, Integer> unsorted) 
 	{
+		sorted.putAll(unsorted);
 		
 		return null;
 	}
