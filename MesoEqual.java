@@ -13,6 +13,13 @@ public class MesoEqual
 	private HashMap<String, Integer> equalAsciiVals;
 	private ArrayList<String> keyValues= new ArrayList<String>();
 	
+	public MesoEqual(String Stid) throws IOException
+	{
+		readInfo();
+		StiD=Stid;
+		equalAsciiVals= new HashMap<String, Integer>();
+	}
+	
 	public void readInfo() throws IOException
 	{
 			/*
@@ -46,7 +53,7 @@ public class MesoEqual
 				/*
 				 * changing the value from the entire line to just the STID value
 				 */
-				temp=temp.substring(1, 5);
+				temp=temp.substring(2, 6);
 				/*
 				 * adding the STID value to the ArrayList
 				 */
@@ -62,29 +69,25 @@ public class MesoEqual
 		STIDVals.close();
 	}
 	
-	public MesoEqual(String Stid)
-	{
-		StiD=Stid;
-		equalAsciiVals= new HashMap<String, Integer>();
-	}
 	
-	public MesoAscii convert(String string)
+	public MesoAscii convert(String string) 
 	{
-		MesoStation placeHold =new MesoStation(StiD);
+		MesoStation placeHold =new MesoStation(string);
 		MesoAscii calAvgStid= new MesoAscii(placeHold);
 		return calAvgStid;
 	}
 	
 
-	public HashMap<String, Integer> calAsciiEqual() 
+	public HashMap<String, Integer> calAsciiEqual()
 	{
 		int comparisonAvg= convert(StiD).calAverage();
 		for(int i=0; i<keyValues.size(); i++)
 		{
-			if(comparisonAvg==convert(keyValues.get(i)).calAverage())
+			if(comparisonAvg==(convert(keyValues.get(i)).calAverage()))
 			{
 				Integer avg=new Integer(convert(keyValues.get(i)).calAverage());
 				equalAsciiVals.put(keyValues.get(i), avg);
+				
 			}
 		}
 		return equalAsciiVals;
