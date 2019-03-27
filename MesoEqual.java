@@ -3,7 +3,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 
 public class MesoEqual
 {
@@ -11,7 +10,7 @@ public class MesoEqual
 	 * Global String variable to hold the STID value from the constructor
 	 */
 	private String StiD;
-	private Map<String, Integer> equalAsciiVals;
+	private HashMap<String, Integer> equalAsciiVals;
 	private ArrayList<String> keyValues= new ArrayList<String>();
 	
 	public void readInfo() throws IOException
@@ -74,20 +73,21 @@ public class MesoEqual
 		MesoStation placeHold =new MesoStation(StiD);
 		MesoAscii calAvgStid= new MesoAscii(placeHold);
 		return calAvgStid;
-		
 	}
 	
 
 	public HashMap<String, Integer> calAsciiEqual() 
 	{
-		int comarisonAvg= convert(StiD).calAverage();
+		int comparisonAvg= convert(StiD).calAverage();
 		for(int i=0; i<keyValues.size(); i++)
 		{
-			
-			
+			if(comparisonAvg==convert(keyValues.get(i)).calAverage())
+			{
+				Integer avg=new Integer(convert(keyValues.get(i)).calAverage());
+				equalAsciiVals.put(keyValues.get(i), avg);
+			}
 		}
-		
-		return null;
+		return equalAsciiVals;
 	}
 	
 }
