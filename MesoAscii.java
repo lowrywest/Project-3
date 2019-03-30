@@ -1,25 +1,24 @@
 
 public class MesoAscii extends MesoAsciiAbstract
 {
-	
 	/*
 	 * Creating a global array to hold all the char values in the Stid String 
 	 */
 	private char[] vals;
 	/*
-	 * Creating the 
+	 * Creating the  MesoAcii object
 	 */
 	public MesoAscii(MesoStation Stid)
 	{
 		vals=Stid.getStID().toCharArray();
 	}
 	/*
-	 * Defining the abstract method from the abstract class and seeing wether to return the floor or ceil value.
+	 * Defining the abstract method from the abstract class and seeing whether to return the floor or ceil value.
 	 */
 	@Override
 	public int calAverage()
 	{
-		double avg= vals[0]+vals[1]+vals[2]+vals[3]/4.0;
+		double avg= (vals[0]+vals[1]+vals[2]+vals[3])/4.0;
 		/*
 		 * comparing the decimal point value of the average to see whether to return the ceil or floor value
 		 */

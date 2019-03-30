@@ -13,6 +13,9 @@ public class MesoEqual
 	private HashMap<String, Integer> equalAsciiVals;
 	private ArrayList<String> keyValues= new ArrayList<String>();
 	
+	/*
+	 * The mesoEqual constructor
+	 */
 	public MesoEqual(String Stid) throws IOException
 	{
 		readInfo();
@@ -69,7 +72,9 @@ public class MesoEqual
 		STIDVals.close();
 	}
 	
-	
+	/*
+	 * This method converts a string into a mesoAscii object
+	 */
 	public MesoAscii convert(String string) 
 	{
 		MesoStation placeHold =new MesoStation(string);
@@ -77,14 +82,28 @@ public class MesoEqual
 		return calAvgStid;
 	}
 	
-
+	/*
+	 * this method caclulates the STID values with equal average Ascii values
+	 */
 	public HashMap<String, Integer> calAsciiEqual()
 	{
+		/*
+		 * this holds the average that we are comparing the whole list to
+		 */
 		int comparisonAvg= convert(StiD).calAverage();
+		/*
+		 * looping through an arraylist of key values from the hashMao
+		 */
 		for(int i=0; i<keyValues.size(); i++)
 		{
+			/*
+			 * comparing the set Ascii average to the average of the all the key values in the array list
+			 */
 			if(comparisonAvg==(convert(keyValues.get(i)).calAverage()))
 			{
+				/*
+				 * converting the value to an Integer object and adding it to the hash map
+				 */
 				Integer avg=new Integer(convert(keyValues.get(i)).calAverage());
 				equalAsciiVals.put(keyValues.get(i), avg);
 				

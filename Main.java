@@ -21,7 +21,7 @@ public class Main
 		System.out.println("Stations are: "+ mesoequal.calAsciiEqual());
 		
 		System.out.print("##");
-		System.out.println("Unsroted:");
+		System.out.println("Unsorted:");
 		AsciiVal=mesoequal.calAsciiEqual();		
 		for (String stid : AsciiVal.keySet()) 
 		{
